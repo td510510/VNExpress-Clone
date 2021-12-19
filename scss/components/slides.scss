@@ -1,0 +1,32 @@
+.slides {
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  background-color: #17191a;
+  color: #fff;
+  line-height: 20px;
+  &__btn {
+    cursor: pointer;
+    position: absolute;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.801);
+    &--down {
+      bottom: 5%;
+      left: 70%;
+    }
+    &--up {
+      bottom: 5%;
+      left: 67%;
+    }
+    @media (max-width: 950px) {
+      &--down {
+        bottom: 5%;
+        left: 67%;
+      }
+      &--up {
+        bottom: 5%;
+        left: 61%;
+      }
+    }
+  }
+}

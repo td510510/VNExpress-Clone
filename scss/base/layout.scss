@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.wrapper {
+  max-width: $wrapper;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: $container;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.nav-container {
+  max-width: $nav-container;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-gray-light;
+}

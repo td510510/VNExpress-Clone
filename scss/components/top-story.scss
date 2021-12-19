@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+.top-story {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  column-gap: 20px;
+  @media (max-width: 820px) {
+    grid-template-columns: 1fr;
+    .ads {
+      display: none;
+    }
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 20px;
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+}

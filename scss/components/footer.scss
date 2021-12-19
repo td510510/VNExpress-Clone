@@ -1,0 +1,124 @@
+@use "../abstracts/" as *;
+
+.footer {
+  padding-top: 40px;
+  &-top {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 1.5fr;
+    gap: 15px;
+    padding-bottom: 20px;
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 30px;
+    }
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    ul {
+      &:first-child {
+        font-weight: 700;
+      }
+      &:nth-child(4),
+      &:nth-child(5) {
+        border-right: 1px solid $color-gray-light;
+      }
+      li {
+        &:not(:last-child) {
+          margin-bottom: 13px;
+        }
+      }
+      .line {
+        width: 80%;
+        height: 0.5px;
+        background-color: $color-gray-light;
+      }
+    }
+  }
+  .contact {
+    &__app {
+      .app-logo {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      a {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        align-items: flex-end;
+        padding: 10px;
+        background-color: #e5e5e5;
+        border-radius: 3px;
+        img {
+          width: 15px;
+        }
+      }
+    }
+    &__contact {
+      margin-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color-gray-light;
+      ion-icon {
+        color: $color-gray;
+      }
+      .text-box {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        a {
+          &:last-child {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+    &__hotline {
+      padding-top: 10px;
+      &-box {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  &-bottom {
+    padding-top: 20px;
+    border-top: 1px solid $color-gray-light;
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 25px;
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 25px;
+        li {
+          &:first-child {
+            border-right: 1px solid $color-gray-light;
+            padding-right: 25px;
+            @media (max-width: 500px) {
+              display: none;
+            }
+          }
+        }
+        ion-icon {
+          font-size: 20px;
+        }
+      }
+    }
+    .information {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+    }
+    .follow {
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+  }
+}

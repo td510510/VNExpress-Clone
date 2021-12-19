@@ -1,0 +1,56 @@
+@use "../abstracts/" as *;
+
+.videos {
+  .box-category {
+    .titles {
+      justify-content: flex-start;
+      gap: 20px;
+    }
+  }
+  &-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+    margin-top: 15x;
+    @media (max-width: 1130px) {
+      grid-template-columns: 1fr;
+    }
+    video {
+      width: 100%;
+      height: auto;
+    }
+    &__title {
+      margin-top: 20px;
+      font-family: $font-merry;
+      font-weight: 700;
+      font-size: 24px;
+      margin-bottom: 14px;
+      line-height: 160%;
+      &:hover {
+        color: $default-hover;
+      }
+    }
+    &__right {
+      max-height: 405px;
+      overflow-y: scroll;
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+        &:not(:last-child) {
+          @media (max-width: 1130px) {
+            margin-bottom: 20px;
+          }
+        }
+        .title {
+          font-family: $font-merry;
+          font-size: 14px;
+          font-weight: 400;
+        }
+        .tag {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

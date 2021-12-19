@@ -1,0 +1,70 @@
+@use "../abstracts/" as *;
+
+.news-box {
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  gap: 20px;
+  &--top {
+    grid-template-columns: 2fr 1fr;
+    background-color: #f7f7f7;
+    @media (max-width: 580px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &--none-bg {
+    background-color: #ffffff;
+  }
+  &--no-img-top {
+    grid-template-columns: 1fr;
+  }
+  &--news-middle {
+    grid-template-columns: 1fr 1fr;
+  }
+  &__text {
+    padding-right: 20px;
+    .box {
+      display: grid;
+      grid-template-columns: 3fr 4fr;
+      column-gap: 10px;
+    }
+  }
+  &__title {
+    font-family: $font-merry;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 14px;
+    &:hover {
+      color: $default-hover;
+    }
+  }
+  .title {
+    color: #9f224e;
+    font-weight: 700;
+    margin: 0px 0px 5px;
+    text-align: left;
+  }
+  .author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+  &--line-right {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      z-index: 10;
+      content: "";
+      height: 100%;
+      width: 0.5px;
+      background-color: $color-gray-light;
+    }
+  }
+}

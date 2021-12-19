@@ -1,0 +1,108 @@
+@use "../abstracts/" as *;
+
+.navigation {
+  border-top: 1px solid $color-gray-light;
+  border-bottom: 1px solid $color-gray-light;
+  color: $color-black-plus;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 600;
+  position: relative;
+  .main-nav {
+    &--sticky {
+      position: fixed;
+      background-color: #fff;
+      top: 0;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99999;
+    }
+    margin: 0 auto;
+    .parent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        .sub {
+          position: absolute;
+          z-index: 99;
+          top: 100%;
+          width: 190px;
+          background: #fff;
+          box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+          text-align: left;
+
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(20px);
+          transition: all 0.3s;
+          li {
+            padding: 10px 15px;
+            color: $color-black;
+            font-weight: 400;
+          }
+        }
+        &:hover {
+          color: $default-hover;
+          .sub {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            transform: translateY(0);
+          }
+        }
+        &:not(:first-child) {
+          @media (max-width: 1320px) {
+            display: none;
+          }
+        }
+        &:last-child {
+          @media (max-width: 1320px) {
+            display: block;
+          }
+        }
+      }
+
+      .newlest {
+        display: none;
+      }
+      .home {
+        a {
+          width: 22px;
+          height: 22px;
+          background-color: $color-gray-light;
+          padding: 2px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .home-icon {
+          font-size: 16px;
+        }
+      }
+      .all-menu {
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background-color: none;
+          cursor: pointer;
+          color: #bdbdbd;
+          &:hover {
+            color: #b52759;
+          }
+        }
+        .menu-icon {
+          font-size: 23px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

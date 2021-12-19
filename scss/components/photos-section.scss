@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.photos {
+  h3 {
+    font-family: $font-merry;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 14px;
+    &:hover {
+      color: $default-hover;
+    }
+  }
+}
