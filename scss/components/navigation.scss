@@ -4,18 +4,17 @@
   border-top: 1px solid $color-gray-light;
   border-bottom: 1px solid $color-gray-light;
   color: $color-black-plus;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 0;
+  padding-bottom: 0;
   font-weight: 600;
-  position: relative;
   .main-nav {
     &--sticky {
       position: fixed;
       background-color: #fff;
       top: 0;
       width: 100%;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      // padding-top: 12px;
+      // padding-bottom: 12px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 99999;
@@ -25,7 +24,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      & > li {
+        position: relative;
+      }
       li {
+        & > a {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
         .sub {
           position: absolute;
           z-index: 99;
@@ -40,10 +46,15 @@
           pointer-events: none;
           transform: translateY(20px);
           transition: all 0.3s;
+
           li {
             padding: 10px 15px;
             color: $color-black;
             font-weight: 400;
+            & > a {
+              padding-top: 0;
+              padding-bottom: 0;
+            }
           }
         }
         &:hover {
