@@ -37,7 +37,9 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 10px;
+        cursor: pointer;
         &:not(:last-child) {
+          margin-bottom: 10px;
           @media (max-width: 1130px) {
             margin-bottom: 20px;
           }
@@ -48,7 +50,7 @@
           font-weight: 400;
         }
         .tag {
-          margin-top: 10px;
+          margin-top: 6px;
         }
       }
     }

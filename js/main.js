@@ -89,3 +89,25 @@ const options = {
 
 const observer = new IntersectionObserver(stickyFunc, options);
 observer.observe(navBoxEl);
+
+// ************
+//  VIDEO//
+// ************
+
+const videoContainerEl = document.querySelector(".videos-box__right");
+const videosEl = document.querySelectorAll(".videos-box__right .row");
+const videoMainEl = document.querySelector(".videos-box__left video");
+const titleEl = document.querySelector(".videos-box__left .videos-box__title");
+
+videoContainerEl.addEventListener("click", (e) => {
+  const video = e.target
+    .closest(".row")
+    .querySelector("video")
+    .getAttribute("src");
+  const title = e.target.closest(".row").querySelector(".title").innerHTML;
+  console.log(title);
+
+  videoMainEl.src = video;
+  titleEl.innerHTML = title;
+  videoMainEl.play();
+});
